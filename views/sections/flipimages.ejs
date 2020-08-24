@@ -1,0 +1,42 @@
+<section class="features15 cid-s6GpEZBhD1" id="features15-c">
+
+
+
+
+    <div class="container">
+        <h2 class="mbr-section-title pb-3 align-center mbr-fonts-style display-2">
+            Images with different flip animations
+        </h2>
+        <h3 class="mbr-section-subtitle display-5 align-center mbr-fonts-style">
+            You can add little Description here
+        </h3>
+
+
+        <div class="media-container-row container pt-5 mt-2 row">
+
+          <% for(i=0; i<(flipimg.length); i++){ %>
+
+            <div class="col-12 col-md-6 mb-4 col-lg-4">
+                <div class="card flip-card p-5 align-center">
+                    <div class="card-front card_cont">
+                        <img src="<%= flipimg[i].url %>" alt="Mobirise">
+                    </div>
+                    <div class="card_back card_cont">
+                        <h4 class="card-title display-5 py-2 mbr-fonts-style">
+                            <%= flipimg[i].head %>
+                        </h4>
+                        <p class="mbr-text mbr-fonts-style display-7">
+                            <%= flipimg[i].desc %>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+          <% }; %>
+
+        </div>
+
+</div>
+
+</section>

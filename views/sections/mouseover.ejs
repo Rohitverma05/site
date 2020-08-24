@@ -1,0 +1,41 @@
+<section class="features18 popup-btn-cards cid-s6GpGSP831" id="features18-d">
+
+
+
+
+    <div class="container">
+        <h2 class="mbr-section-title pb-3 align-center mbr-fonts-style display-2">
+            Images With Caption
+        </h2>
+
+
+
+
+        <div class="media-container-row pt-5 row mbr-gallery">
+          <% for(i=0; i<(hover.length); i++){ %>
+
+            <div class="card p-3 col-12 col-md-6 col-lg-4">
+                <div class="card-wrapper ">
+                    <div class="card-img">
+                        <div class="mbr-overlay"></div>
+                        <img src="<%= hover[i].url %>" alt="Mobirise">
+                    </div>
+                    <div class="card-box">
+                        <h4 class="card-title mbr-fonts-style display-7">
+                            <%= hover[i].head %>
+                        </h4>
+                        <p class="mbr-text mbr-fonts-style align-left display-7">
+                            <%= hover[i].desc %>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <% }; %>
+
+
+        </div>
+
+    </div>
+
+</section>

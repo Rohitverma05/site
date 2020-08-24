@@ -1,0 +1,23 @@
+<section class="mbr-gallery gallery5 cid-s6GpPHLMqs" id="gallery5-e">
+
+    <div class="container">
+        <h3 class="mbr-section-title align-center mbr-fonts-style display-2">
+            <a href="/refresh">INSTAGRAM</a>
+        </h3>
+        <h4 class="mbr-section-subtitle align-center pb-4 mbr-fonts-style display-5">
+            Photos Shown below
+        </h4>
+
+
+        <div class="row mbr-gallery" data-toggle="modal" data-target="#s6GqzA1SES">
+          <% for(i=0; i<(imgurl.length); i++){ %>
+            <div class="col-sm-6 col-md-4 col-lg-3 item gallery-image">
+                <div class="item-wrapper">
+                    <img class="w-100" src="<%= imgurl[i] %>" alt="" data-slide-to="0" data-target="#s6GqzA1joe">
+                </div>
+            </div>
+          <% }; %>
+        </div>
+
+    </div>
+</section>
