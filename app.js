@@ -173,7 +173,7 @@ function LoadImage(urle){
 
 
 
-// LoadImage(url);
+LoadImage(url);
 
 app.get("/", function(req, res){
 res.render("home", {imgurl: gallery, flipimg: flipimg , hover: hover, coverUrl: coverUrl});
@@ -184,6 +184,7 @@ app.get("/refresh", (req, res) =>{
   let refresh = new Promise((resolve, reject)=>{
     gallery = [];
     hover = [];
+    mediaid = [];
     console.log("cleared for new entry");
     setTimeout(() => {
       resolve("Refreshed");
