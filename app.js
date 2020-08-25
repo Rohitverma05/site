@@ -29,13 +29,13 @@ function flipImg(url, head, desc){
 var hover = [];
 
 // flip images with heading and description in set of 3 in one line
-// var flipimg = [
-//   {url:"assets/images/background1.jpg" ,head:"Hello" ,desc:"Rohit verma"},
-//   {url:"assets/images/background2.jpg" ,head:"Hello" ,desc:"Rohit verma"},
-//   {url:"assets/images/background3.jpg" ,head:"Hello" ,desc:"Rohit verma"},
-//   {url:"assets/images/background2.jpg" ,head:"Hello" ,desc:"Rohit verma"},
-//   {url:"assets/images/background3.jpg" ,head:"Hello" ,desc:"Rohit verma"}
-// ];
+var flipimg = [
+  {url:"assets/images/background1.jpg" ,head:"Hello" ,desc:"Rohit verma"},
+  {url:"assets/images/background2.jpg" ,head:"Hello" ,desc:"Rohit verma"},
+  {url:"assets/images/background3.jpg" ,head:"Hello" ,desc:"Rohit verma"},
+  {url:"assets/images/background2.jpg" ,head:"Hello" ,desc:"Rohit verma"},
+  {url:"assets/images/background3.jpg" ,head:"Hello" ,desc:"Rohit verma"}
+];
 
 
 // in full slider cover image Urls
@@ -153,7 +153,7 @@ function LoadImage(urle){
   });
 
   insta.then((mediadata)=>{
-    for(i=0; i<mediadata.length; i++){    // changing number of images for limit now   mediadata.length
+    for(i=0; i<5; i++){    // changing number of images for limit now   mediadata.length
       //console.log(mediadata[i].id);
       if(mediadata[i].caption){
         //console.log("with c");
@@ -173,7 +173,7 @@ function LoadImage(urle){
 
 
 
-LoadImage(url);
+// LoadImage(url);
 
 app.get("/", function(req, res){
 res.render("home", {imgurl: gallery, flipimg: flipimg , hover: hover, coverUrl: coverUrl});
@@ -185,11 +185,14 @@ app.get("/refresh", (req, res) =>{
     gallery = [];
     hover = [];
     console.log("cleared for new entry");
-    resolve("Refreshed");
+    setTimeout(() => {
+      resolve("Refreshed");
+    }, 500);
+    // resolve("Refreshed");
   });
 
-  refresh.then(async function(message){
-    await LoadImage(url)
+  refresh.then(function(message){
+    LoadImage(url)
     setTimeout(() => {
       console.log(message);
       res.redirect("/");
@@ -201,5 +204,5 @@ app.get("/refresh", (req, res) =>{
 
 
 app.listen(5000, function(){
-  console.log("server started at port 3000");
+  console.log("server started at port 5000");
 });
